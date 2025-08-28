@@ -1,6 +1,6 @@
 ## SQLMap Essentials - Skills Assessment Write-up
 
-Before diving into the solution for this final challenge in the **SQLMap Essentials** module, I want to briefly mention the previous module **SQL Injection Fundamentals (medium level)**. Compared to this one (labeled as *easy*), the previous assessment was actually more straightforward.
+Before diving into the solution for this final challenge in the **SQLMap Essentials** module, I want to briefly mention the previous module **SQL Injection Fundamentals** (medium level). Compared to this one (labeled as *easy*), the previous assessment was actually more straightforward.
 
 
 ### Quick overview of the "Skills Assessment - SQL Injection Fundamentals"
@@ -8,7 +8,7 @@ Before diving into the solution for this final challenge in the **SQLMap Essenti
 -   Used **Union-based SQLi** to determine the number of columns in the table
 -   Checked local OS file write permissions
 -   Uploaded a **web shell** into the default web directory (reference: [SecLists Default Web Root Directories](https://github.com/danielmiessler/SecLists/blob/master/Discovery/Web-Content/default-web-root-directory-linux.txt)
--   Searched the system for files named `*flag*.txt` and successfully retrieved the flag
+-   Searched the system for files named **flag.txt** and successfully retrieved the flag
 
 
 ### Current Task - SQLMap Essentials
