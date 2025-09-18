@@ -16,7 +16,6 @@ During exploration, I discovered an **upload form** located at `/contact`.
 ### Observation
 
 - The form allowed image uploads.  
-
 - Client-side JavaScript contained a `checkFile` function validating extensions (`.jpg`, `.jpeg`, `.png`).  
 
 ![](screenshots/1.png)
@@ -31,7 +30,6 @@ While client-side validation was limited to `.jpg`, `.jpeg`, and `.png`, it coul
 The presence of client-side validation suggested that server-side validation might also exist. I therefore considered two possible vectors to test:
 
 1. **File extensions** – single dangerous extensions like `.php` were unlikely to pass, but combinations or double extensions could be tested.  
-
 2. **Content-Type headers (or MIME types)** – the backend might enforce `image/*` checks, so brute-forcing different MIME types could reveal additional accepted formats.  
 
 
@@ -49,7 +47,6 @@ I noticed that clicking the **green button** triggered the uploaded image to be 
 
 **Action**:
 - Sent the request to **Burp Repeater**.  
-
 - Created a dictionary of MIME types:  
 
 ```bash
@@ -155,17 +152,12 @@ if (move_uploaded_file($_FILES["uploadFile"]["tmp_name"], $target_file)) {
 
 #### Key Findings from upload.php
 
-Files saved in: `./user_feedback_submissions/`
-
-File renamed: `date('ymd')_originalName`
-
-Blacklist: blocks `.php`, `.phps`, `.phtml`
-
-Whitelist: requires filename ending with `[a-z]{2,3}g` (e.g., `.jpg`, `.png`)
-
-MIME check: regex `image/[a-z]{2,3}g`
-
-Size limit: 500 KB
+ - Files saved in: `./user_feedback_submissions/`
+ - File renamed: `date('ymd')_originalName`
+ - Blacklist: blocks `.php`, `.phps`, `.phtml`
+ - Whitelist: requires filename ending with `[a-z]{2,3}g` (e.g., `.jpg`, `.png`)
+ - MIME check: regex `image/[a-z]{2,3}g`
+ - Size limit: 500 KB
 
 
 ### Bypassing Upload Filters
