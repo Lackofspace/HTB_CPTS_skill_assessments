@@ -1,4 +1,4 @@
-## Penetration Testing Report – CPTS HTB Module
+## Web Attacks - Skills Assessment Write-up
 
 
 ### Objective
@@ -234,4 +234,5 @@ This confirms the presence of critical access control and input validation weakn
  - **IDOR** allowed enumeration of all user accounts, including privileged users.
  - Improper enforcement of HTTP methods enabled privilege escalation via password reset.
  - **XXE injection** in XML processing allowed arbitrary file disclosure.
+
  - Exploitation of these vulnerabilities led to retrieval of the assessment flag.
