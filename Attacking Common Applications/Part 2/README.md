@@ -73,7 +73,7 @@ Key results:
  - `80` and `443` — Apache/2.4.41 (Ubuntu) — site title: Shipter – Transport and Logistics HTML5 Template
  - `8060` — nginx 1.18.0 (404)
  - `8180` — nginx serving GitLab (sign-in page discovered) — many disallowed paths in robots.txt
- - TLS certificate for <target_ip> (issuer: Nagios Enterprises)
+ - TLS certificate for `<target_ip>` (issuer: Nagios Enterprises)
 
 No WordPress instances were discovered with superficial checks on the main host (it is needed to answer on the first question to the task).
 
@@ -261,4 +261,5 @@ The chain of issues — name-based VHosts hiding a blog, sensitive information c
  - Used the discovered credentials to authenticate to **Nagios XI** (version 5.7.5).
  - Leveraged the **Metasploit module** `exploit/linux/http/nagios_xi_configwizards_authenticated_rce` (authenticated config-wizard RCE) against `monitoring.inlanefreight.local`. After a second `run` the module delivered a successful Meterpreter session.
  - From the obtained shell I located and read the final flag at `/usr/local/nagiosxi/html/admin/f5088a8*************************_flag.txt`.
+
 
