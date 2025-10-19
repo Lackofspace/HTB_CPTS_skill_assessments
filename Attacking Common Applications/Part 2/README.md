@@ -9,7 +9,7 @@ The goal of this assessment was to perform service enumeration to identify vulne
 
 ### Reconnaissance & Service enumeration
 
-The <target_ip> and VHost `gitlab.inlanefreight.local` were given.
+The `<target_ip>` and VHost `gitlab.inlanefreight.local` were given.
 
 First I scanned the target for open ports:
 
@@ -261,3 +261,4 @@ The chain of issues — name-based VHosts hiding a blog, sensitive information c
  - Used the discovered credentials to authenticate to **Nagios XI** (version 5.7.5).
  - Leveraged the **Metasploit module** `exploit/linux/http/nagios_xi_configwizards_authenticated_rce` (authenticated config-wizard RCE) against `monitoring.inlanefreight.local`. After a second `run` the module delivered a successful Meterpreter session.
  - From the obtained shell I located and read the final flag at `/usr/local/nagiosxi/html/admin/f5088a8*************************_flag.txt`.
+
